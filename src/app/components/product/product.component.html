@@ -1,0 +1,13 @@
+<!-- <div *ngFor="let product of products"> {{product.title}} </div>
+<hr> -->
+@if (products) { @for (product of products; track product.title) {
+<!-- <div style="display: flex; flex-wrap: wrap; gap: 20px"> -->
+<div style="width: 200px; text-align: center">
+  <img [src]="product.image" alt="" style="width: 100%" />
+  <br />
+  <a [routerLink]="['/detail-product', product.id]">{{ product.title }}</a>
+</div>
+<!-- </div> -->
+} @empty {
+<li>There are no items.</li>
+} }
